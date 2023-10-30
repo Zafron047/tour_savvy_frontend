@@ -6,12 +6,22 @@ export const fetchPackages = createAsyncThunk('packages-fetcher', async () => {
   return packages.data;
 });
 
+const saveStateToLocalStorage = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('reduxState', serializedState);
+  } catch (err) {
+    alert('An error occurred while saving your data. Please try again later.');
+  }
+};
+
 const packagesSlice = createSlice({
   name: 'packages',
   initialState: {
     allPackages: [],
     loading: false,
     error: null,
+    isPackageFetched: false,
   },
   extraReducers: (builder) => {
     builder
@@ -20,11 +30,16 @@ const packagesSlice = createSlice({
         loading: true,
       }))
 
-      .addCase(fetchPackages.fulfilled, (state, action) => ({
-        ...state,
-        loading: false,
-        allPackages: action.payload,
-      }))
+      .addCase(fetchPackages.fulfilled, (state, action) => {
+        const newState = {
+          ...state,
+          loading: false,
+          allPackages: action.payload,
+          isPackageFetched: true,
+        };
+        saveStateToLocalStorage(newState);
+        return newState;
+      })
 
       .addCase(fetchPackages.rejected, (state, action) => ({
         ...state,
