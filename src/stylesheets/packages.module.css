@@ -1,0 +1,12 @@
+.container {
+  width: 100vw;
+  height: 90vh;
+}
+
+.headline {
+  text-align: center;
+}
+
+.desc {
+  text-align: center;
+}
