@@ -6,7 +6,7 @@ const Package = ({ p }) => {
   const { name, description } = p;
 
   return (
-    <Link to="/details">
+    <Link to={`/details/${p.id}`}>
       <div className={css.container}>
         <img
           src={p.image}
@@ -30,6 +30,7 @@ const Package = ({ p }) => {
 
 Package.propTypes = {
   p: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,

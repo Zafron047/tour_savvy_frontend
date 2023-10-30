@@ -13,7 +13,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Packages />} />
-          <Route path="/details" element={<PackageDetails />} />
+          <Route path="/details/:id" element={<PackageDetails />} />
         </Routes>
       </BrowserRouter>
     </Provider>
