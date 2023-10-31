@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import packagesSlice from './packages/packagesSlice';
-import reservationsReducer from './reservations/reservationSlice';
 
 const loadStateFromLocalStorage = () => {
   try {
@@ -17,7 +16,6 @@ const loadStateFromLocalStorage = () => {
 const store = configureStore({
   reducer: {
     packages: packagesSlice,
-    reservations: reservationsReducer,
   },
   preloadedState: loadStateFromLocalStorage(),
 });
