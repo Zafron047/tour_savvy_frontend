@@ -11,7 +11,7 @@ const SideNav = () => (
         <NavLink to="/add_package">Add Package</NavLink>
       </li>
       <li>
-        <NavLink to="/">Reservations</NavLink>
+        <NavLink to="/reservations">Reservations</NavLink>
       </li>
       <li>
         <NavLink to="/">Add Reservation</NavLink>
