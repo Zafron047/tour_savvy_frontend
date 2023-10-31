@@ -8,7 +8,7 @@ const SideNav = () => (
         <NavLink to="/">Packages</NavLink>
       </li>
       <li>
-        <NavLink to="/">Add Package</NavLink>
+        <NavLink to="/add_package">Add Package</NavLink>
       </li>
       <li>
         <NavLink to="/">Reservations</NavLink>
@@ -17,7 +17,7 @@ const SideNav = () => (
         <NavLink to="/">Add Reservation</NavLink>
       </li>
       <li>
-        <NavLink to="/">Delete Package</NavLink>
+        <NavLink to="/delete-packages">Delete Package</NavLink>
       </li>
       <li>
         <NavLink to="/">Logout</NavLink>
