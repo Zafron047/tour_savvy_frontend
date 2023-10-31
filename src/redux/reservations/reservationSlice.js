@@ -1,22 +1,23 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
 const initialState = {
   reservations: [],
   isLoading: true,
 };
 export const getReservations = createAsyncThunk(
-  "reservations/getReservations",
-  async (thunkAPI,id) => {
+  'reservations/getReservations',
+  async (thunkAPI, id) => {
     try {
       const res = await axios(`http://127.0.0.1:3000/packages/${id}/reservations`);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue("something went wrong");
+      return thunkAPI.rejectWithValue('something went wrong');
     }
-  }
+  },
 );
 const reservationsSlice = createSlice({
-  name: "reservations",
+  name: 'reservations',
   initialState,
   extraReducers: {
     [getReservations.pending]: (state) => {

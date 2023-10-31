@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getReservations } from '../redux/reservations/reservationSlice';
@@ -8,7 +8,6 @@ function Reservations() {
   // console.log(reservations);
   const dispatch = useDispatch();
   useEffect(() => {
-    
     dispatch(getReservations(1));
   }, []);
 
@@ -24,11 +23,20 @@ function Reservations() {
   return (
     <div>
       {reservations.map((reservation) => (
-        <Link to='/reservation' state={{prop_package_id: reservation.package_id, prop_reservation_id: reservation.id}}>
+        <Link to="/reservation" key={reservation.id} state={{ prop_package_id: reservation.package_id, prop_reservation_id: reservation.id }}>
           <div className="reservation" key={reservation.id}>
-            <h2>Location: {reservation.city_name}</h2>
-            <h3>Date: {reservation.reservation_date}</h3>
-            <h3>Package: {reservation.package_type}</h3>
+            <h2>
+              Location:
+              {reservation.city_name}
+            </h2>
+            <h3>
+              Date:
+              {reservation.reservation_date}
+            </h3>
+            <h3>
+              Package:
+              {reservation.package_type}
+            </h3>
           </div>
         </Link>
       ))}
@@ -36,4 +44,4 @@ function Reservations() {
   );
 }
 
-export default Reservations
+export default Reservations;
