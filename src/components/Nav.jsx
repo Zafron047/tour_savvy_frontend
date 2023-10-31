@@ -14,10 +14,13 @@ const SideNav = () => (
         <NavLink to="/reservations">Reservations</NavLink>
       </li>
       <li>
-        <NavLink to="/">Add Reservation</NavLink>
+        <NavLink to="/add_reservations">Add Reservation</NavLink>
       </li>
       <li>
         <NavLink to="/delete-packages">Delete Package</NavLink>
+      </li>
+      <li>
+        <NavLink to="/remove_reservations">Remove Reservations</NavLink>
       </li>
       <li>
         <NavLink to="/">Logout</NavLink>
