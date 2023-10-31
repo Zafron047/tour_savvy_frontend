@@ -6,6 +6,16 @@ export const fetchPackages = createAsyncThunk('packages-fetcher', async () => {
   return packages.data;
 });
 
+export const createPackage = createAsyncThunk('packages-create', async (newPackage) => {
+  const response = await axios.post('http://127.0.0.1:3000/packages', newPackage);
+  return response.data;
+});
+
+export const deletePackage = createAsyncThunk('packages-delete', async (packageId) => {
+  await axios.delete(`http://127.0.0.1:3000/packages/${packageId}`);
+  return packageId;
+});
+
 const saveStateToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state);
@@ -45,7 +55,16 @@ const packagesSlice = createSlice({
         ...state,
         loading: false,
         error: action.error.message,
-      }));
+      }))
+
+      .addCase(deletePackage.fulfilled, (state, action) => {
+        const packageId = action.payload;
+        const updatedPackages = state.allPackages.filter((p) => p.id !== packageId);
+        return {
+          ...state,
+          allPackages: updatedPackages,
+        };
+      });
   },
 });
 

@@ -9,7 +9,7 @@ const PackageDetails = () => {
   const isPackageFetched = useSelector((state) => state.packages.isPackageFetched);
   const allPackages = useSelector((state) => state.packages.allPackages);
 
-  const [selectedPackageType, setSelectedPackageType] = useState(''); // State to store selected package_type name
+  const [selectedPackageType, setSelectedPackageType] = useState('');
 
   useEffect(() => {
     if (!isPackageFetched || !allPackages.find((pkg) => pkg.id === id)) {
