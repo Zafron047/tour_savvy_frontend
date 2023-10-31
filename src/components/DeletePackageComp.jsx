@@ -11,7 +11,7 @@ const DeletePackageComp = ({ p }) => {
           src={p.image}
           alt="avatar"
         />
-        <h5 >{name}</h5>
+        <h5>{name}</h5>
         <p>------------------------</p>
         <p>
           {description}

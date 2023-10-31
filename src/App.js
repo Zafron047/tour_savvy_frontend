@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Packages from './components/Packages';
 import PackageDetails from './components/Package_Details';
-import PackageForm from './components/PackageForm'
+import PackageForm from './components/PackageForm';
 import SideNav from './components/Nav';
-import DeletePackages from './components/DeletePackages'
+import DeletePackages from './components/DeletePackages';
 
 const App = () => (
   <>

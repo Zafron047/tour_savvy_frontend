@@ -40,47 +40,51 @@ const PackageForm = () => {
 
   return (
     <div>
-      <h2>Create a New Package</h2>
+      <h2 className="mt-4 mb-3">Create a New Package</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        <div className="mb-3">
+          <input type="text" placeholder="Name" id="nameInput" className="form-control" value={name} onChange={(e) => setName(e.target.value)} required />
         </div>
-        <div>
-          <label>Description:</label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
+        <div className="mb-3">
+          <textarea className="form-control" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />
         </div>
-        <div>
-          <label>Image URL:</label>
-          <input type="text" value={image} onChange={(e) => setImage(e.target.value)} required />
+        <div className="mb-3">
+          <input type="text" placeholder="Image URL" className="form-control" value={image} onChange={(e) => setImage(e.target.value)} required />
         </div>
         {packageTypes.map((packageType, index) => (
-          <div key={index}>
-            <h3>Package Type {index + 1}</h3>
-            <div>
-              <label>Package Type Name:</label>
+          /* eslint-disable react/no-array-index-key */
+          <div key={index} className="mb-4">
+            <h3 className="mb-3">
+              Package Type
+              {index + 1}
+            </h3>
+            <div className="mb-3">
               <input
                 type="text"
                 name="name"
+                placeholder="Package Type Name"
+                className="form-control"
                 value={packageType.name}
                 onChange={(e) => handlePackageTypeChange(index, e)}
                 required
               />
             </div>
-            <div>
-              <label>Price:</label>
+            <div className="mb-3">
               <input
                 type="number"
                 name="price"
+                placeholder="Price"
+                className="form-control"
                 value={packageType.price}
                 onChange={(e) => handlePackageTypeChange(index, e)}
                 required
               />
             </div>
-            <div>
-              <label>Package Type Description:</label>
+            <div className="mb-3">
               <textarea
                 name="description"
+                placeholder="Package Type Description"
+                className="form-control"
                 value={packageType.description}
                 onChange={(e) => handlePackageTypeChange(index, e)}
                 required
@@ -88,10 +92,10 @@ const PackageForm = () => {
             </div>
           </div>
         ))}
-        <button type="button" onClick={addPackageType}>
+        <button type="button" className="btn btn-secondary" onClick={addPackageType}>
           Add Package Type
         </button>
-        <button type="submit">Create Package</button>
+        <button type="submit" className="btn btn-primary">Create Package</button>
       </form>
     </div>
   );
