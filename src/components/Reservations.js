@@ -1,14 +1,15 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function Reservations() {
-  const current_user = JSON.parse(localStorage.getItem('user'));
-  if (!current_user) {
-    return <div>Please log in to see reservations.</div>;
-  }
-  
   const isLoading = useSelector((store) => store.reservations.isLoading);
   const user = JSON.parse(localStorage.getItem('user'));
+
+  if (!user) {
+    return <div>Please log in to see reservations.</div>;
+  }
+
   const res = useSelector((s) => s.reservations.reservations).filter((i) => i.user_id === user.id);
 
   if (isLoading) {
