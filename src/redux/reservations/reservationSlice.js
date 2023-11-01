@@ -3,14 +3,38 @@ import axios from 'axios';
 
 const initialState = {
   reservations: [],
+  reservation: {},
+  reservationPackage: {},
   isLoading: true,
 };
 
 export const getReservations = createAsyncThunk(
   'reservations/getReservations',
   async (thunkAPI) => {
+    const user = JSON.parse(window.localStorage.getItem('user'));
+
+    const config = {
+      headers: {
+        'X-User-Token': user.token,
+      },
+    };
+
     try {
-      const res = await axios('http://127.0.0.1:3000/reservations');
+      const res = await axios('http://127.0.0.1:3000/reservations', config);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('something went wrong');
+    }
+  },
+);
+
+export const getReservation = createAsyncThunk(
+  'reservations/getReservation',
+  async (reservationId, thunkAPI) => {
+    try {
+      const res = await axios(
+        `http://127.0.0.1:3000/reservations/${reservationId}`,
+      );
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('something went wrong');
@@ -27,9 +51,18 @@ export const addReservation = createAsyncThunk(
       package_name: reservation.packageName,
       package_type: reservation.packageType,
     };
+    const user = JSON.parse(window.localStorage.getItem('user'));
+
+    const config = {
+      headers: {
+        'X-User-Token': user.token,
+      },
+    };
     try {
       const res = await axios.post(
-        'http://127.0.0.1:3000/reservations/', newReservation,
+        'http://127.0.0.1:3000/reservations/',
+        newReservation,
+        config,
       );
       return res.data;
     } catch (error) {
@@ -41,7 +74,6 @@ export const addReservation = createAsyncThunk(
 export const removeReservation = createAsyncThunk(
   'reservations/removeReservations',
   async (id, thunkAPI) => {
-    console.log(id);
     try {
       const res = await axios.delete(
         `http://127.0.0.1:3000/reservations/${id}`,
@@ -75,6 +107,11 @@ const reservationsSlice = createSlice({
       state.reservations = state.reservations.filter(
         (reservation) => reservation.id !== action.payload.id,
       );
+    },
+    [getReservation.fulfilled]: (state, action) => {
+      state.reservation = action.payload.reservation;
+      const [firstPackage] = action.payload.package;
+      state.reservationPackage = firstPackage;
     },
   },
 });
