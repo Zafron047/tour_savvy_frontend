@@ -11,6 +11,8 @@ import { getReservations } from './redux/reservations/reservationSlice';
 import Reservations from './components/Reservations';
 import AddReservation from './components/AddReservation';
 import RemoveReservation from './components/RemoveReservation';
+import Login from './components/Login';
+import Logout from './components/Logout';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +24,9 @@ const App = () => {
     <>
       <SideNav />
       <Routes>
-        <Route path="/" element={<Packages />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/packages" element={<Packages />} />
         <Route path="/details/:id" element={<PackageDetails />} />
         <Route path="/add_package" element={<PackageForm />} />
         <Route path="/delete-packages" element={<DeletePackages />} />
