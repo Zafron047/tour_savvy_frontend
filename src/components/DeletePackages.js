@@ -16,6 +16,11 @@ const DeletePackages = () => {
     dispatch(deletePackage(packageId));
   };
 
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (!user) {
+    return <div>Please log in to delete a package.</div>;
+  }
+
   if (loading) {
     return (
       <>

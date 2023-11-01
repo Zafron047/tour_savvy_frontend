@@ -10,6 +10,11 @@ export const logoutUser = createAsyncThunk('user-logout', async () => {
   localStorage.removeItem('user');
 });
 
+export const registrationUser = createAsyncThunk('user-registration', async (user) => {
+  const response = await axios.post('http://127.0.0.1:3000/register', user);
+  return response.data;
+});
+
 const userSlice = createSlice({
   name: 'current_user',
   initialState: {
@@ -37,6 +42,22 @@ const userSlice = createSlice({
     })
 
     .addCase(loginUser.rejected, (state, action) => ({
+      ...state,
+      loading: false,
+      error: action.error.message,
+    }))
+
+    .addCase(registrationUser.pending, (state) => ({
+      ...state,
+      loading: true,
+    }))
+
+    .addCase(registrationUser.fulfilled, (state) => ({
+      ...state,
+      loading: false,
+    }))
+
+    .addCase(registrationUser.rejected, (state, action) => ({
       ...state,
       loading: false,
       error: action.error.message,

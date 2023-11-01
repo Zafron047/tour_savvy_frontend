@@ -13,6 +13,7 @@ import AddReservation from './components/AddReservation';
 import RemoveReservation from './components/RemoveReservation';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import Registration from './components/Registration';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const App = () => {
       <SideNav />
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/details/:id" element={<PackageDetails />} />
