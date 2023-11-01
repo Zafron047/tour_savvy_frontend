@@ -23,7 +23,7 @@ const SideNav = () => (
         <NavLink to="/remove_reservations">Remove Reservations</NavLink>
       </li>
       <li>
-        <NavLink to="/">Logout</NavLink>
+        <NavLink to="/logout">Logout</NavLink>
       </li>
     </ul>
   </div>
