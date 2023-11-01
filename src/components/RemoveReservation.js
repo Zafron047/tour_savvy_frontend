@@ -11,6 +11,12 @@ function RemoveReservation() {
     e.preventDefault();
     dispatch(removeReservation(id));
   };
+
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (!user) {
+    return <div>Please log in to delete a reservation.</div>;
+  }
+
   if (isLoading) {
     return (
       <>

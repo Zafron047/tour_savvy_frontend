@@ -2,7 +2,15 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function Reservations() {
-  const { reservations, isLoading } = useSelector((store) => store.reservations);
+  const current_user = JSON.parse(localStorage.getItem('user'));
+  if (!current_user) {
+    return <div>Please log in to see reservations.</div>;
+  }
+  
+  const isLoading = useSelector((store) => store.reservations.isLoading);
+  const user = JSON.parse(localStorage.getItem('user'));
+  const res = useSelector((s) => s.reservations.reservations).filter((i) => i.user_id === user.id);
+
   if (isLoading) {
     return (
       <>
@@ -14,7 +22,7 @@ function Reservations() {
   }
   return (
     <div>
-      {reservations.map((reservation) => (
+      {res.map((reservation) => (
         <Link to="/reservation" key={reservation.id} state={{ prop_package_id: reservation.package_id, prop_reservation_id: reservation.id }}>
           <div className="reservation" key={reservation.id}>
             <h2>

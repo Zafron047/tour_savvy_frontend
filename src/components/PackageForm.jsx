@@ -38,6 +38,11 @@ const PackageForm = () => {
     setPackageTypes([{ name: '', price: '', description: '' }]);
   };
 
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (!user) {
+    return <div>Please log in to add a package.</div>;
+  }
+
   return (
     <div>
       <h2 className="mt-4 mb-3">Create a New Package</h2>

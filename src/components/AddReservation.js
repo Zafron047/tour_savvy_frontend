@@ -9,6 +9,11 @@ function AddReservation() {
   const [packageName, setPackageName] = useState('');
   const [packageType, setPackageType] = useState('');
 
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (!user) {
+    return <div>Please log in to add a reservation.</div>;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(addReservation({
