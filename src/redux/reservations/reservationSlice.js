@@ -5,6 +5,7 @@ const initialState = {
   reservations: [],
   reservation: {},
   reservationPackage: {},
+  price: 0,
   isLoading: true,
 };
 
@@ -30,10 +31,15 @@ export const getReservations = createAsyncThunk(
 
 export const getReservation = createAsyncThunk(
   'reservations/getReservation',
-  async (reservationId, thunkAPI) => {
+  async (idAndType, thunkAPI) => {
     try {
       const res = await axios(
-        `http://127.0.0.1:3000/reservations/${reservationId}`,
+        `http://127.0.0.1:3000/reservations/${idAndType.id}`,
+        {
+          params: {
+            type: idAndType.type,
+          },
+        },
       );
       return res.data;
     } catch (error) {
@@ -51,6 +57,7 @@ export const addReservation = createAsyncThunk(
       package_name: reservation.packageName,
       package_type: reservation.packageType,
     };
+
     const user = JSON.parse(window.localStorage.getItem('user'));
 
     const config = {
@@ -58,6 +65,7 @@ export const addReservation = createAsyncThunk(
         'X-User-Token': user.token,
       },
     };
+
     try {
       const res = await axios.post(
         'http://127.0.0.1:3000/reservations/',
@@ -110,8 +118,11 @@ const reservationsSlice = createSlice({
     },
     [getReservation.fulfilled]: (state, action) => {
       state.reservation = action.payload.reservation;
-      const [firstPackage] = action.payload.package;
+      const [firstPackage] = action.payload.packages;
       state.reservationPackage = firstPackage;
+      if (action.payload.price) {
+        state.price = action.payload.price;
+      }
     },
   },
 });

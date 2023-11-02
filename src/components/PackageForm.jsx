@@ -1,48 +1,40 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createPackage } from '../redux/packages/packagesSlice';
+import { createPackage, fetchPackages } from '../redux/packages/packagesSlice';
 
 const PackageForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
   const [packageTypes, setPackageTypes] = useState([{ name: '', price: '', description: '' }]);
-
+  const dispatch = useDispatch();
   const addPackageType = () => {
     setPackageTypes([...packageTypes, { name: '', price: '', description: '' }]);
   };
-
   const handlePackageTypeChange = (index, e) => {
     const updatedPackageTypes = [...packageTypes];
     updatedPackageTypes[index][e.target.name] = e.target.value;
     setPackageTypes(updatedPackageTypes);
   };
-
-  const dispatch = useDispatch();
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const newPackage = {
       name,
       description,
       image,
       package_type: packageTypes,
     };
-
-    dispatch(createPackage(newPackage));
-
+    await dispatch(createPackage(newPackage));
+    await dispatch(fetchPackages());
     setName('');
     setDescription('');
     setImage('');
     setPackageTypes([{ name: '', price: '', description: '' }]);
   };
-
   const user = JSON.parse(localStorage.getItem('user'));
   if (!user) {
     return <div>Please log in to add a package.</div>;
   }
-
   return (
     <div>
       <h2 className="mt-4 mb-3">Create a New Package</h2>
@@ -105,5 +97,4 @@ const PackageForm = () => {
     </div>
   );
 };
-
 export default PackageForm;

@@ -10,12 +10,20 @@ function AddReservation() {
   const [reservationDate, setReservationDate] = useState('');
   const [packageName, setPackageName] = useState('');
   const [packageType, setPackageType] = useState('');
+  const [packageId, setPackageId] = useState(0);
+
+  let packageTypes = [];
+
+  packages.forEach((packageItem) => {
+    if (packageItem.id === packageId) {
+      packageTypes = packageItem.package_type;
+    }
+  });
 
   const user = JSON.parse(localStorage.getItem('user'));
   if (!user) {
     return <div>Please log in to add a reservation.</div>;
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(
@@ -48,7 +56,15 @@ function AddReservation() {
         <h2>Package Name:</h2>
         <select
           value={packageName}
-          onChange={(e) => setPackageName(e.target.value)}
+          onChange={(e) => {
+            const selectedPackage = packages.find(
+              (packageItem) => packageItem.name === e.target.value,
+            );
+            if (selectedPackage) {
+              setPackageName(e.target.value);
+              setPackageId(selectedPackage.id);
+            }
+          }}
         >
           <option value="">Select a Package</option>
           {packages.map((packageItem) => (
@@ -58,37 +74,20 @@ function AddReservation() {
           ))}
         </select>
 
+        <h2>Package Type:</h2>
         <div>
-          <p>Package Type:</p>
-          <label htmlFor="packageType">
-            <input
-              type="radio"
-              value="Golden"
-              checked={packageType === 'Golden'}
-              onChange={(e) => setPackageType(e.target.value)}
-            />
-            Golden
-          </label>
-
-          <label htmlFor="packageType">
-            <input
-              type="radio"
-              value="Silver"
-              checked={packageType === 'Silver'}
-              onChange={(e) => setPackageType(e.target.value)}
-            />
-            Silver
-          </label>
-
-          <label htmlFor="packageType">
-            <input
-              type="radio"
-              value="Platinum"
-              checked={packageType === 'Platinum'}
-              onChange={(e) => setPackageType(e.target.value)}
-            />
-            Platinum
-          </label>
+          {packageTypes.map((type) => (
+            <label key={type.name} htmlFor="PackageType">
+              <input
+                type="radio"
+                name="packageType"
+                value={type.name}
+                checked={packageType === type.name}
+                onChange={(e) => setPackageType(e.target.value)}
+              />
+              {type.name}
+            </label>
+          ))}
         </div>
 
         <button type="submit">Add Reservation</button>

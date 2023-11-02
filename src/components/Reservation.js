@@ -5,27 +5,17 @@ import { getReservation } from '../redux/reservations/reservationSlice';
 
 function Reservation() {
   const location = useLocation();
-  const { reservation } = useSelector((store) => store.reservations);
-  const { reservationPackage } = useSelector((store) => store.reservations);
+  const { reservation, reservationPackage, price } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
 
   const { propReservationId, packageType } = location.state;
 
   useEffect(() => {
     const getData = async () => {
-      await dispatch(
-        getReservation(propReservationId),
-      );
+      await dispatch(getReservation({ id: propReservationId, type: packageType }));
     };
     getData();
   }, []);
-
-  let price = 500;
-  if (packageType === 'Platinum') {
-    price = 2000;
-  } else if (packageType === 'Golden') {
-    price = 1000;
-  }
 
   console.log(reservationPackage);
   return (
@@ -51,7 +41,8 @@ function Reservation() {
         {reservationPackage.description}
       </h2>
       <h2>
-        {`Price: $${price}`}
+        Price:
+        { price }
       </h2>
     </div>
   );
