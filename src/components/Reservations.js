@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 function Reservations() {
   const { reservations, isLoading } = useSelector(
     (store) => store.reservations,
   );
   const user = JSON.parse(localStorage.getItem('user'));
-  const [searchQuery, setSearchQuery] = useState('');
+  const [search, setsearch] = useState('');
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    setsearch(e.target.value);
   };
   if (!user) {
     return <div>Please log in to see reservations.</div>;
@@ -22,18 +23,16 @@ function Reservations() {
       </>
     );
   }
-  const filteredReservations = reservations.filter((reservation) =>
-    reservation.city_name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const res = reservations.filter((i) => i.city_name.toLowerCase().includes(search.toLowerCase()));
   return (
     <div>
       <input
         type="text"
         placeholder="Search by name"
-        value={searchQuery}
+        value={search}
         onChange={handleSearchChange}
       />
-      {filteredReservations.map((reservation) => (
+      {res.map((reservation) => (
         <Link
           to="/reservation"
           key={reservation.id}
