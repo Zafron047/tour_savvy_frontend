@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../redux/authentication/userSlice';
+import { getReservations } from '../redux/reservations/reservationSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -19,17 +20,21 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(loginUser({ user: { username: formData.username } })).then((response) => {
-      if (response.payload && response.payload.username) {
+    const res = await dispatch(loginUser({ user: { username: formData.username } }));
+    console.log(res);
+    try {
+      if (res) {
+        await dispatch(getReservations());
+        alert('You are logged in');
         navigate('/packages');
       } else {
         alert('You need to register');
       }
-    }).catch((error) => {
-      alert('Error during login', error.message);
-    });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

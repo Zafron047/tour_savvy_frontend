@@ -1,17 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Package from './Package';
 import css from '../stylesheets/packages.module.css';
-import { fetchPackages } from '../redux/packages/packagesSlice';
 
 const Packages = () => {
   const packages = useSelector((state) => state.packages.allPackages);
   const loading = useSelector((state) => state.packages.loading);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchPackages());
-  }, [dispatch]);
 
   if (loading) {
     return (

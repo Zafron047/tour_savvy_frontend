@@ -6,15 +6,32 @@ export const fetchPackages = createAsyncThunk('packages-fetcher', async () => {
   return packages.data;
 });
 
-export const createPackage = createAsyncThunk('packages-create', async (newPackage) => {
-  const response = await axios.post('http://127.0.0.1:3000/packages', newPackage);
-  return response.data;
-});
+export const createPackage = createAsyncThunk(
+  'packages-create',
+  async (newPackage) => {
+    const user = JSON.parse(window.localStorage.getItem('user'));
 
-export const deletePackage = createAsyncThunk('packages-delete', async (packageId) => {
-  await axios.delete(`http://127.0.0.1:3000/packages/${packageId}`);
-  return packageId;
-});
+    const config = {
+      headers: {
+        'X-User-Token': user.token,
+      },
+    };
+    const response = await axios.post(
+      'http://127.0.0.1:3000/packages',
+      newPackage,
+      config,
+    );
+    return response.data;
+  },
+);
+
+export const deletePackage = createAsyncThunk(
+  'packages-delete',
+  async (packageId) => {
+    await axios.delete(`http://127.0.0.1:3000/packages/${packageId}`);
+    return packageId;
+  },
+);
 
 const saveStateToLocalStorage = (state) => {
   try {
@@ -59,7 +76,9 @@ const packagesSlice = createSlice({
 
       .addCase(deletePackage.fulfilled, (state, action) => {
         const packageId = action.payload;
-        const updatedPackages = state.allPackages.filter((p) => p.id !== packageId);
+        const updatedPackages = state.allPackages.filter(
+          (p) => p.id !== packageId,
+        );
         return {
           ...state,
           allPackages: updatedPackages,

@@ -10,10 +10,13 @@ export const logoutUser = createAsyncThunk('user-logout', async () => {
   localStorage.removeItem('user');
 });
 
-export const registrationUser = createAsyncThunk('user-registration', async (user) => {
-  const response = await axios.post('http://127.0.0.1:3000/register', user);
-  return response.data;
-});
+export const registrationUser = createAsyncThunk(
+  'user-registration',
+  async (user) => {
+    const response = await axios.post('http://127.0.0.1:3000/signup', user);
+    return response.data;
+  },
+);
 
 const userSlice = createSlice({
   name: 'current_user',

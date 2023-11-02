@@ -7,19 +7,29 @@ import PackageDetails from './components/Package_Details';
 import PackageForm from './components/PackageForm';
 import SideNav from './components/Nav';
 import DeletePackages from './components/DeletePackages';
-import { getReservations } from './redux/reservations/reservationSlice';
 import Reservations from './components/Reservations';
 import AddReservation from './components/AddReservation';
 import RemoveReservation from './components/RemoveReservation';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Registration from './components/Registration';
+import { fetchPackages } from './redux/packages/packagesSlice';
+import Reservation from './components/Reservation';
+import { getReservations } from './redux/reservations/reservationSlice';
 
 const App = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(getReservations());
-  }, []);
+    dispatch(fetchPackages());
+  }, [dispatch]);
+
+  if (localStorage.getItem('user')) {
+    const allReservations = async () => {
+      dispatch(getReservations());
+    };
+    allReservations();
+  }
 
   return (
     <>
@@ -35,6 +45,7 @@ const App = () => {
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/add_reservations" element={<AddReservation />} />
         <Route path="/remove_reservations" element={<RemoveReservation />} />
+        <Route path="/reservation" element={<Reservation />} />
       </Routes>
     </>
   );
