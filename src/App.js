@@ -16,21 +16,18 @@ import Registration from './components/Registration';
 import { fetchPackages } from './redux/packages/packagesSlice';
 import Reservation from './components/Reservation';
 import { getReservations } from './redux/reservations/reservationSlice';
-
 const App = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchPackages());
   }, [dispatch]);
-
   if (localStorage.getItem('user')) {
     const allReservations = async () => {
       dispatch(getReservations());
     };
     allReservations();
   }
-
+  const user = JSON.parse(localStorage.getItem('user')) || {};
   return (
     <>
       <SideNav />
@@ -40,8 +37,12 @@ const App = () => {
         <Route path="/logout" element={<Logout />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/details/:id" element={<PackageDetails />} />
-        <Route path="/add_package" element={<PackageForm />} />
-        <Route path="/delete-packages" element={<DeletePackages />} />
+        {user.user.admin === true && (
+          <>
+            <Route path="/add_package" element={<PackageForm />} />
+            <Route path="/delete-packages" element={<DeletePackages />} />
+          </>
+        )}
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/add_reservations" element={<AddReservation />} />
         <Route path="/remove_reservations" element={<RemoveReservation />} />
@@ -50,5 +51,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;
