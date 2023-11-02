@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -6,11 +7,13 @@ function Reservations() {
     (store) => store.reservations,
   );
   const user = JSON.parse(localStorage.getItem('user'));
-
+  const [search, setsearch] = useState('');
+  const handleSearchChange = (e) => {
+    setsearch(e.target.value);
+  };
   if (!user) {
     return <div>Please log in to see reservations.</div>;
   }
-
   if (isLoading) {
     return (
       <>
@@ -20,9 +23,16 @@ function Reservations() {
       </>
     );
   }
+  const res = reservations.filter((i) => i.city_name.toLowerCase().includes(search.toLowerCase()));
   return (
     <div>
-      {reservations.map((reservation) => (
+      <input
+        type="text"
+        placeholder="Search by name"
+        value={search}
+        onChange={handleSearchChange}
+      />
+      {res.map((reservation) => (
         <Link
           to="/reservation"
           key={reservation.id}
@@ -50,5 +60,4 @@ function Reservations() {
     </div>
   );
 }
-
 export default Reservations;
