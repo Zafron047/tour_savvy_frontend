@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deletePackage, fetchPackages } from '../redux/packages/packagesSlice';
+import { getReservations } from '../redux/reservations/reservationSlice';
 import DeletePackageComp from './DeletePackageComp';
 
 const DeletePackages = () => {
@@ -13,7 +14,9 @@ const DeletePackages = () => {
   }, [dispatch]);
 
   const handleDelete = (packageId) => {
-    dispatch(deletePackage(packageId));
+    dispatch(deletePackage(packageId)).then(() => {
+      dispatch(getReservations());
+    });
   };
 
   const user = JSON.parse(localStorage.getItem('user'));

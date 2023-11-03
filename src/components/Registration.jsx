@@ -10,18 +10,27 @@ const Registration = () => {
   const error = useSelector((state) => state.current_user.error);
   const [formData, setFormData] = useState({
     username: '',
+    email: '',
+    password: '',
   });
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
+      [e.target.email]: e.target.value,
+      [e.target.password]: e.target.value,
     });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(registrationUser({ user: { username: formData.username } })).then((response) => {
+    dispatch(registrationUser({
+      user:
+      {
+        username: formData.username,
+        email: formData.email,
+        password: formData.password,
+      },
+    })).then((response) => {
       if (response.payload && response.payload.username) {
         navigate('/');
       } else {
@@ -31,7 +40,6 @@ const Registration = () => {
       alert('Error during registration', error.message);
     });
   };
-
   return (
     <div>
       <h2>Registration</h2>
@@ -44,6 +52,26 @@ const Registration = () => {
             name="username"
             placeholder="Username"
             value={formData.username}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
             onChange={handleChange}
           />
         </div>
