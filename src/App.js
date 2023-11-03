@@ -16,6 +16,7 @@ import Registration from './components/Registration';
 import { fetchPackages } from './redux/packages/packagesSlice';
 import Reservation from './components/Reservation';
 import { getReservations } from './redux/reservations/reservationSlice';
+
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -37,7 +38,7 @@ const App = () => {
         <Route path="/logout" element={<Logout />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/details/:id" element={<PackageDetails />} />
-        {user.user.admin === true && (
+        {user && user.user && user.user.admin === true && (
           <>
             <Route path="/add_package" element={<PackageForm />} />
             <Route path="/delete-packages" element={<DeletePackages />} />

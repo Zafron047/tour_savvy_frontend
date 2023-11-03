@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 function SideNav() {
   const user = JSON.parse(localStorage.getItem('user')) || {};
   return (
@@ -11,7 +12,7 @@ function SideNav() {
         <li>
           <NavLink to="/reservations">Reservations</NavLink>
         </li>
-        {user.user.admin === true && (
+        {user && user.user && user.user.admin === true && (
           <>
             <li>
               <NavLink to="/add_package">Add Package</NavLink>
