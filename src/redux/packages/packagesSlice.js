@@ -28,7 +28,17 @@ export const createPackage = createAsyncThunk(
 export const deletePackage = createAsyncThunk(
   'packages-delete',
   async (packageId) => {
-    await axios.delete(`http://127.0.0.1:3000/packages/${packageId}`);
+    const user = JSON.parse(window.localStorage.getItem('user'));
+
+    const config = {
+      headers: {
+        'X-User-Token': user.token,
+      },
+    };
+    await axios.delete(
+      `http://127.0.0.1:3000/packages/${packageId}`,
+      config,
+    );
     return packageId;
   },
 );
