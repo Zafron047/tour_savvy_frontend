@@ -1,24 +1,24 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import "../stylesheets/package.css"
+import '../stylesheets/package.css';
 
 const Package = ({ p }) => {
   const { name, description } = p;
   const line = Array(name.length + 5).join('-');
   return (
-    <Link to={`/details/${p.id}`} className='package-link d-flex flex-column justify-content-center align-items-center'>
-      <div className='package d-flex flex-column justify-content-center align-items-center'>
+    <Link to={`/details/${p.id}`} className="package-link d-flex flex-column justify-content-center align-items-center">
+      <div className="package d-flex flex-column justify-content-center align-items-center">
         <img
           src={p.image}
           alt="avatar"
-          className='package-img'
+          className="package-img"
         />
-        <h5 className='package-name'>{name}</h5>
-        <p className='package-line'>{line}</p>
-        <p className='package-details'>
+        <h5 className="package-name">{name}</h5>
+        <p className="package-line">{line}</p>
+        <p className="package-details">
           {description}
         </p>
-        <p className='package-socials'>
+        <p className="package-socials">
           <span><i className="bx bxl-facebook-circle text-secondary socials-icons" /></span>
           <span><i className="bx bxl-twitter text-secondary socials-icons" /></span>
           <span><i className="bx bxl-instagram text-secondary socials-icons" /></span>

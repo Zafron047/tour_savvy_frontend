@@ -30,7 +30,7 @@ const App = () => {
   }
   const user = JSON.parse(localStorage.getItem('user')) || {};
   return (
-    <>
+    <div className="d-flex">
       <SideNav />
       <Routes>
         <Route path="/" element={<Login />} />
@@ -49,7 +49,7 @@ const App = () => {
         <Route path="/remove_reservations" element={<RemoveReservation />} />
         <Route path="/reservation" element={<Reservation />} />
       </Routes>
-    </>
+    </div>
   );
 };
 export default App;
