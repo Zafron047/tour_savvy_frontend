@@ -48,7 +48,7 @@
 
 .packages-search {
   margin-top: 10px;
-  font-weight: 500;  
+  font-weight: 500;
 }
 
 .packages-line {
@@ -107,7 +107,7 @@
 
 /* Mobile */
 @media screen and (width < 768px) {
-.swiper-slide {
+  .swiper-slide {
     width: 100% !important;
   }
 }
@@ -126,10 +126,11 @@
     font-size: 1rem;
   }
 
-            .packages-line {
-              font-size: 1.2rem;
-              font-weight: 500;
-            }
+  .packages-line {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
   .swipe-btn-1,
   .swipe-btn-2 {
     height: 60px;
@@ -139,25 +140,23 @@
     width: 20px;
     height: 20px;
   }
-
 }
 
 @media screen and (width > 1400px) {
   .packages-heading {
-      font-size: 2.5rem;
-    }
-  
-    .packages-sub-heading {
-      font-size: 1.5rem;
+    font-size: 2.5rem;
+  }
 
-    }
+  .packages-sub-heading {
+    font-size: 1.5rem;
+  }
 
-    .packages-line {
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
+  .packages-line {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 
-        .packages-search {
-          font-size: 1.6rem;
-        }
- }
+  .packages-search {
+    font-size: 1.6rem;
+  }
+}

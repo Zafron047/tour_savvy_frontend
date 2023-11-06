@@ -30,7 +30,7 @@ const App = () => {
   }
   const user = JSON.parse(localStorage.getItem('user')) || {};
   return (
-    <div className='app d-flex'>
+    <div className="app d-flex">
       <SideNav />
       <Routes>
         <Route path="/" element={<Login />} />

@@ -8,22 +8,18 @@ const DeletePackages = () => {
   const packages = useSelector((state) => state.packages.allPackages);
   const loading = useSelector((state) => state.packages.loading);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchPackages());
   }, [dispatch]);
-
   const handleDelete = (packageId) => {
     dispatch(deletePackage(packageId)).then(() => {
       dispatch(getReservations());
     });
   };
-
   const user = JSON.parse(localStorage.getItem('user'));
   if (!user) {
     return <div>Please log in to delete a package.</div>;
   }
-
   if (loading) {
     return (
       <>
@@ -33,19 +29,20 @@ const DeletePackages = () => {
       </>
     );
   }
-
   return (
-    <div>
-
-      { packages.map((p) => (
-        <div key={p.id}>
-          <DeletePackageComp key={p.id} p={p} />
-          <button type="button" onClick={() => handleDelete(p.id)}>Delete Package</button>
+    <div className="container delete-wrap">
+      {packages.map((p) => (
+        <div className="card-container" key={p.id}>
+          <div className="per-package" key={p.id}>
+            <DeletePackageComp key={p.id} p={p} />
+            <button type="button" onClick={() => handleDelete(p.id)} className="btn btn-danger">Delete Package</button>
+          </div>
+          <div className="description" key={p.id}>
+            {p.description}
+          </div>
         </div>
       ))}
-
     </div>
   );
 };
-
 export default DeletePackages;

@@ -103,31 +103,31 @@
 
 /* 2k screen  */
 
-@media screen and (width > 1400px) { 
+@media screen and (width > 1400px) {
   .package {
-      height: 600px;
-    }
-  
-    .package-img {
-      width: 280px;
-      height: 280px;
-      border-radius: 280px;
-    }
-  
-    .package-name {
-      font-size: 1.8rem;
-      margin-top: 25px;
-    }
-  
-    .package-details {
-      font-size: 1.2rem;
-    }
+    height: 600px;
+  }
 
-            .package-line {
-              font-size: 1.5rem;
-            }
-  
-    .socials-icons {
-      font-size: 2.5rem;
-    }
+  .package-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 280px;
+  }
+
+  .package-name {
+    font-size: 1.8rem;
+    margin-top: 25px;
+  }
+
+  .package-details {
+    font-size: 1.2rem;
+  }
+
+  .package-line {
+    font-size: 1.5rem;
+  }
+
+  .socials-icons {
+    font-size: 2.5rem;
+  }
 }

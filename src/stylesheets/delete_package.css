@@ -1,0 +1,43 @@
+.card-container {
+  display: flex;
+  gap: 2rem;
+  margin: 0.7rem 0;
+  height: auto;
+}
+
+.img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.delete-wrap {
+  display: flex;
+  flex-direction: column;
+
+  /* border: 5px solid Blue; */
+  margin: 2%;
+}
+
+.per-package {
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.description {
+  width: 70%;
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

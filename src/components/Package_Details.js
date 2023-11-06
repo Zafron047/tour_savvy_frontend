@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
 import { fetchPackages } from '../redux/packages/packagesSlice';
 import '../stylesheets/package_details.css';
