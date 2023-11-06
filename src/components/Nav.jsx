@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import "../stylesheets/nav.css"
 
-function SideNav() {
+const SideNav = () => {
   const user = JSON.parse(localStorage.getItem('user')) || {};
   return (
-    <div>
+    <div className='nav'>
       <ul>
         <li>
           <NavLink to="/packages">Packages</NavLink>

@@ -51,7 +51,7 @@ const Packages = () => {
           value={searchQuery}
           onChange={handleSearchChange}
         />
-        <p className="package-line">------------------------</p>
+        <p className="packages-line">------------------------</p>
       </div>
       <div className="packages-list">
         <button className="swipe-btn-1" onClick={handlePrevSlide}>
