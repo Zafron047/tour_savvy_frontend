@@ -81,7 +81,7 @@ const Login = () => {
           </div>
         </form>
         <div>
-          <NavLink to="/registration">Register</NavLink>
+          <NavLink className="registration" to="/registration">Register</NavLink>
         </div>
       </div>
     </div>

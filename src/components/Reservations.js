@@ -34,6 +34,7 @@ function Reservations() {
         <input
           type="text"
           placeholder="Search by name"
+          className="search-bar"
           value={search}
           onChange={handleSearchChange}
         />
@@ -60,15 +61,9 @@ function Reservations() {
                 {i + 1}
                 .
               </span>
-              <span className="res-city">
-                {reservation.city_name}
-              </span>
-              <span className="res-date">
-                {reservation.reservation_date}
-              </span>
-              <span className="res-type">
-                {reservation.package_type}
-              </span>
+              <span className="res-city">{reservation.city_name}</span>
+              <span className="res-date">{reservation.reservation_date}</span>
+              <span className="res-type">{reservation.package_type}</span>
             </div>
           </Link>
         ))}

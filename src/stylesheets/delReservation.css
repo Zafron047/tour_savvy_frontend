@@ -4,6 +4,16 @@
   height: 100vh;
 }
 
+.cancel-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-height: 100vh;
+  overflow-y: scroll;
+  width: 100%;
+  align-items: center;
+}
+
 .main-delReservation {
   padding: 3%;
 }
@@ -24,7 +34,7 @@
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
-  background-color: #80cd32;
+  background-color: #80cd32aa;
   padding: 15px;
   justify-content: space-between;
 }

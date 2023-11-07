@@ -23,13 +23,12 @@ const SideNav = () => {
           <NavLink to="/logout" className="sidenav-link" onClick={toggleSidebar}>Logout</NavLink>
         </li>
       );
-    } else {
-      return (
-        <li className="sidenav-item">
-          <NavLink to="/" className="sidenav-link" onClick={toggleSidebar}>Login</NavLink>
-        </li>
-      );
     }
+    return (
+      <li className="sidenav-item">
+        <NavLink to="/" className="sidenav-link" onClick={toggleSidebar}>Login</NavLink>
+      </li>
+    );
   };
 
   return (
@@ -78,12 +77,7 @@ const SideNav = () => {
               Reservations -
             </NavLink>
           </li>
-          <li className="sidenav-item">
-            <NavLink to="/registration" className="sidenav-link" onClick={toggleSidebar}>
-              Register
-            </NavLink>
-          </li>
-            {renderLoginOrLogoutLink()}
+          {renderLoginOrLogoutLink()}
         </ul>
         <div className="sidenav-footer">
           <ul className="sidebar-socials">

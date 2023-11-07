@@ -33,31 +33,33 @@ function RemoveReservation() {
       <div className="background" />
       <div className="main-delReservation">
         <h2 className="cancel-heading">Cancel a reservation</h2>
-        {reservations.map((reservation) => (
-          <div className="cancel-card" key={reservation.id}>
-            <div className="cancel-details">
-              <h2>
-                Location:&nbsp;
-                {reservation.city_name}
-              </h2>
-              <h3>
-                Date:&nbsp;
-                {reservation.reservation_date}
-              </h3>
-              <h3>
-                Package:&nbsp;
-                {reservation.package_type}
-              </h3>
+        <div className="cancel-card-container">
+          {reservations.map((reservation) => (
+            <div className="cancel-card" key={reservation.id}>
+              <div className="cancel-details">
+                <h2>
+                  Location:&nbsp;
+                  {reservation.city_name}
+                </h2>
+                <h3>
+                  Date:&nbsp;
+                  {reservation.reservation_date}
+                </h3>
+                <h3>
+                  Package:&nbsp;
+                  {reservation.package_type}
+                </h3>
+              </div>
+              <button
+                type="button"
+                className="form-btns cancel-btn"
+                onClick={(e) => handleRemove(e, reservation.id)}
+              >
+                Cancel
+              </button>
             </div>
-            <button
-              type="button"
-              className="form-btns cancel-btn"
-              onClick={(e) => handleRemove(e, reservation.id)}
-            >
-              Cancel
-            </button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

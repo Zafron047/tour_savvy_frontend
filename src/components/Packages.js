@@ -40,17 +40,19 @@ const Packages = () => {
   const filter = packages.filter((p) => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
   return (
     <div className="packages d-flex flex-column justify-content-center align-items-center">
-      <div className="packages-top flex-column justify-content-center align-items-center">
+      <div className="flex-column justify-content-center align-items-center">
         <h1 className="packages-heading">TOUR PACKAGES</h1>
-        <p className="packages-sub-heading">please select a tour package</p>
-        <input
-          className="packages-search"
-          type="text"
-          placeholder="Search by package name"
-          value={searchQuery}
-          onChange={handleSearchChange}
-        />
+        <p className="packages-sub-heading">Please select a tour package</p>
         <p className="packages-line">------------------------</p>
+        <div className="input-container">
+          <input
+            className="packages-search"
+            type="text"
+            placeholder="Search by package name"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
       </div>
       <div className="packages-list">
         <button type="button" className="swipe-btn-1" onClick={handlePrevSlide}>

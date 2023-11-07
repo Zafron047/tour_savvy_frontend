@@ -31,17 +31,21 @@ const DeletePackages = () => {
   }
   return (
     <div className="container delete-wrap">
-      {packages.map((p) => (
-        <div className="card-container" key={p.id}>
-          <div className="per-package" key={p.id}>
-            <DeletePackageComp key={p.id} p={p} />
-            <button type="button" onClick={() => handleDelete(p.id)} className="btn btn-danger">Delete Package</button>
+      <div className="bg-layer">
+        {packages.map((p) => (
+          <div className="card-bg" key={p.id}>
+            <div className="card-container" key={p.id}>
+              <div className="per-package" key={p.id}>
+                <DeletePackageComp key={p.id} p={p} />
+                <button type="button" onClick={() => handleDelete(p.id)} className="btn btn-danger">Delete Package</button>
+              </div>
+              <div className="description" key={p.id}>
+                {p.description}
+              </div>
+            </div>
           </div>
-          <div className="description" key={p.id}>
-            {p.description}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

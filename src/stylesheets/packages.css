@@ -38,7 +38,7 @@
 .packages-sub-heading {
   font-size: 0.8rem;
   font-weight: 500;
-  color: lightgray;
+  color: gray;
   margin: 0;
   text-align: center;
 }
@@ -106,6 +106,10 @@
 
 /* Mobile */
 @media screen and (width < 768px) {
+  .packages {
+    width: 100% !important;
+  }
+
   .swiper-slide {
     width: 100% !important;
   }
@@ -119,14 +123,32 @@
 @media screen and (width > 1000px) {
   .packages-heading {
     font-size: 1.6rem;
+    margin: 0;
   }
 
   .packages-sub-heading {
     font-size: 1rem;
+    margin: 0;
+  }
+
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .packages-search {
-    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    color: #333;
+  }
+
+  .packages-search::placeholder {
+    color: lightgray;
   }
 
   .packages-line {
