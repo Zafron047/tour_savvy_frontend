@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Login component correctly 1`] = `
+<div>
+  <div>
+    <h2>
+      Login
+    </h2>
+    <form>
+      <div>
+        <input
+          id="username"
+          name="username"
+          placeholder="username"
+          type="text"
+          value=""
+        />
+      </div>
+      <div>
+        <input
+          id="password"
+          name="password"
+          placeholder="Password"
+          type="text"
+          value=""
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+        >
+          Log In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
