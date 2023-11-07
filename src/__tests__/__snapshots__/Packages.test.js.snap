@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Packages component correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1
+      class="headline"
+    >
+      TOUR PACKAGES
+    </h1>
+    <p
+      class="desc"
+    >
+      please select a tour package
+    </p>
+    <input
+      placeholder="Search by package name"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

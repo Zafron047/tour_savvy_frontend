@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render SideNav component correctly 1`] = `
+<div>
+  <div>
+    <ul>
+      <li>
+        <a
+          class=""
+          href="/packages"
+        >
+          Packages
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/reservations"
+        >
+          Reservations
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/add_reservations"
+        >
+          Add Reservation
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/remove_reservations"
+        >
+          Remove Reservations
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/registration"
+        >
+          Register
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/logout"
+        >
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
