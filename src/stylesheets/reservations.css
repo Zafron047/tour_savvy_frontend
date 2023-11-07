@@ -1,0 +1,46 @@
+.reservations {
+  width: 80%;
+  max-height: 100vh;
+}
+
+.reservation-link {
+  text-decoration: none;
+  width: 80%;
+}
+
+.reservation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.res-city,
+.res-date,
+.res-type,
+.res-no {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.res-no {
+  flex: 0.1;
+}
+
+.res-city {
+  flex: 0.3;
+}
+
+.res-date {
+  flex: 0.3;
+}
+
+.res-type {
+  flex: 0.3;
+}
+
+@media screen and (width < 768px) {
+  .reservations {
+    width: 100% !important;
+  }
+}
