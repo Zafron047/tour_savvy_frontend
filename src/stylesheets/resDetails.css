@@ -1,0 +1,29 @@
+.resDetails {
+  width: 80%;
+  height: 100vh;
+}
+
+.main-resDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.main-resDetails h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.main-resDetails h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media screen and (width < 768px) {
+  .resDetails {
+    width: 100% !important;
+  }
+}
