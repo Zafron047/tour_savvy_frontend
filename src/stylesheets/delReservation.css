@@ -1,0 +1,43 @@
+.delReservation {
+  display: flex;
+  width: 80%;
+  height: 100vh;
+}
+
+.main-delReservation {
+  padding: 3%;
+}
+
+.cancel-heading,
+.cancel-details {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.cancel-heading {
+  font-size: 1.5rem;
+}
+
+.cancel-card {
+  width: 80%;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #80cd32;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  height: 40px;
+  width: 100px;
+}
+
+/* Mobile */
+@media screen and (width < 768px) {
+  .delReservation {
+    width: 100%;
+    flex: 1;
+  }
+}
