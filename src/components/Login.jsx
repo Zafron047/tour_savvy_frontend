@@ -1,6 +1,7 @@
+import '../stylesheets/login.css';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { loginUser } from '../redux/authentication/userSlice';
 import { getReservations } from '../redux/reservations/reservationSlice';
 
@@ -46,37 +47,45 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
+    <div className="auth-body">
+      <div className="login-container">
+        <h2 className="login-title">Login</h2>
+        {error && <p className="error-message">{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit" disabled={loading} className="submit-button">
+              {loading ? 'Logging in...' : 'Log In'}
+            </button>
+          </div>
+        </form>
         <div>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
+          <NavLink className="registration" to="/registration">Register</NavLink>
         </div>
-        <div>
-          <input
-            type="text"
-            id="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button type="submit" disabled={loading}>
-            {loading ? 'Logging in...' : 'Log In'}
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
+
 export default Login;

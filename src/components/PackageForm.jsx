@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPackage, fetchPackages } from '../redux/packages/packagesSlice';
+import '../stylesheets/package_form.css';
 
 const PackageForm = () => {
   const [name, setName] = useState('');
@@ -36,9 +37,8 @@ const PackageForm = () => {
     return <div>Please log in to add a package.</div>;
   }
   return (
-    <div>
-      <h2 className="mt-4 mb-3">Create a New Package</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="PackageForm">
+      <form className="input" onSubmit={handleSubmit}>
         <div className="mb-3">
           <input type="text" placeholder="Name" id="nameInput" className="form-control" value={name} onChange={(e) => setName(e.target.value)} required />
         </div>
@@ -51,15 +51,11 @@ const PackageForm = () => {
         {packageTypes.map((packageType, index) => (
           /* eslint-disable react/no-array-index-key */
           <div key={index} className="mb-4">
-            <h3 className="mb-3">
-              Package Type
-              {index + 1}
-            </h3>
             <div className="mb-3">
               <input
                 type="text"
                 name="name"
-                placeholder="Package Type Name"
+                placeholder="Package"
                 className="form-control"
                 value={packageType.name}
                 onChange={(e) => handlePackageTypeChange(index, e)}
@@ -80,7 +76,7 @@ const PackageForm = () => {
             <div className="mb-3">
               <textarea
                 name="description"
-                placeholder="Package Type Description"
+                placeholder="Package Plan"
                 className="form-control"
                 value={packageType.description}
                 onChange={(e) => handlePackageTypeChange(index, e)}
@@ -89,10 +85,12 @@ const PackageForm = () => {
             </div>
           </div>
         ))}
-        <button type="button" className="btn btn-secondary" onClick={addPackageType}>
-          Add Package Type
-        </button>
-        <button type="submit" className="btn btn-primary">Create Package</button>
+        <div className="pkg-btn-wrap">
+          <button type="button" className="btn btn-secondary" onClick={addPackageType}>
+            Add Package
+          </button>
+          <button type="submit" className="btn btn-primary create">Create Package</button>
+        </div>
       </form>
     </div>
   );

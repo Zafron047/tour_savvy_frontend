@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../redux/authentication/userSlice';
+import '../stylesheets/logout.css';
 
 const Logout = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,9 @@ const Logout = () => {
   };
 
   return (
-    <button type="button" onClick={handleLogout}>Logout</button>
+    <div className="logout-bg">
+      <button className="logout" type="button" onClick={handleLogout}>Press again to Logout</button>
+    </div>
   );
 };
 

@@ -1,0 +1,64 @@
+.PackageForm {
+  background-image: url('../components/Assets/seabeach.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+}
+
+.PackageForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(117, 189, 8, 0.545);
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.PackageForm .form-control {
+  width: 25rem;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.PackageForm .PackageForm h3 {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(116, 189, 8, 1);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.PackageForm .PackageForm h3,
+.PackageForm button {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(116, 189, 8, 1);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  margin-left: 2rem;
+}
+
+.PackageForm .form-control::placeholder {
+  color: #383838;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .PackageForm .form-control {
+    width: 12rem;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { registrationUser } from '../redux/authentication/userSlice';
+import '../stylesheets/registration.css';
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -41,46 +42,51 @@ const Registration = () => {
     });
   };
   return (
-    <div>
-      <h2>Registration</h2>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            id="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button type="submit" disabled={loading}>
-            {loading ? 'Registering...' : 'Register'}
-          </button>
-        </div>
-      </form>
+    <div className="regi-bg">
+      <div className="registration-container">
+        <h2 className="registration-title">Registration</h2>
+        {error && <p className="error">{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit" disabled={loading} className="submit-button">
+              {loading ? 'Registering...' : 'Register'}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

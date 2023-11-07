@@ -1,0 +1,124 @@
+.package-link {
+  text-decoration: none;
+}
+
+.package {
+  width: 100%;
+}
+
+.package-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 160px;
+  object-fit: fill;
+}
+
+.package-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.package-details {
+  font-size: 0.5rem;
+  color: lightgray;
+  margin: 0;
+}
+
+.package-line {
+  margin: 0;
+  color: lightgray;
+}
+
+.package-socials {
+  display: flex;
+  gap: 10px;
+}
+
+@media screen and (width < 768px) {
+  .package-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+  }
+
+  .package-name {
+    font-size: 1.4rem;
+    margin-top: 25px;
+  }
+
+  .package-details {
+    font-size: 1rem;
+  }
+
+  .package-socials {
+    margin-top: 10px;
+  }
+
+  .socials-icons {
+    font-size: 1.4rem;
+  }
+}
+
+/* Desktop */
+@media screen and (width > 1000px) {
+  .package-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+  }
+
+  .package-name {
+    font-size: 1.3rem;
+    margin-top: 25px;
+  }
+
+  .package-details {
+    font-size: 1rem;
+  }
+
+  .package-line {
+    font-size: 1.2rem;
+  }
+
+  .package-socials {
+    margin-top: 10px;
+  }
+
+  .socials-icons {
+    font-size: 1.7rem;
+  }
+}
+
+/* 2k screen  */
+
+@media screen and (width > 1400px) {
+  .package {
+    height: 600px;
+  }
+
+  .package-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 280px;
+  }
+
+  .package-name {
+    font-size: 1.8rem;
+    margin-top: 25px;
+  }
+
+  .package-details {
+    font-size: 1.2rem;
+  }
+
+  .package-line {
+    font-size: 1.5rem;
+  }
+
+  .socials-icons {
+    font-size: 2.5rem;
+  }
+}

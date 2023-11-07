@@ -1,0 +1,95 @@
+.main-reservations,
+.main-addReservation,
+.main-delReservation,
+.main-resDetails {
+  position: relative;
+  padding-top: 5%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-reservations::before,
+.main-addReservation::before,
+.main-delReservation::before,
+.main-resDetails::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.search-bar::placeholder {
+  text-indent: 10px;
+}
+
+.background {
+  background-color: rgba(128, 205, 50, 0.5);
+
+  /* Green overlay with 50% opacity */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+
+  /* Place it behind the background image overlay */
+}
+
+.form-btns {
+  background-color: #fff;
+  border-radius: 20px;
+  color: #80cd32;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+}
+
+.forms {
+  width: 100%;
+  padding: 15px;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.form-headings {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form-fields::placeholder {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.form-fields {
+  background-color: #80cd32;
+  border: 1px solid white;
+  padding: 7px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+@media screen and (width < 768px) {
+  .background {
+    width: 100%;
+  }
+}

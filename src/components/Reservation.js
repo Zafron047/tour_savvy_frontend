@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getReservation } from '../redux/reservations/reservationSlice';
+import '../stylesheets/resDetails.css';
+import '../stylesheets/common.css';
 
 function Reservation() {
   const location = useLocation();
@@ -19,31 +21,35 @@ function Reservation() {
 
   console.log(reservationPackage);
   return (
-    <div>
-      <h1>
-        Location:
-        {reservation.city_name}
-      </h1>
-      <h2>
-        Date:
-        {reservation.reservation_date}
-      </h2>
-      <h2>
-        Package type:
-        {reservation.package_type}
-      </h2>
-      <h2>
-        Package name:
-        {reservationPackage.name}
-      </h2>
-      <h2>
-        Package details:
-        {reservationPackage.description}
-      </h2>
-      <h2>
-        Price:
-        { price }
-      </h2>
+    <div className="resDetails">
+      <div className="background" />
+      <div className="main-resDetails">
+        <h2>Reservation Details</h2>
+        <h3>
+          Location:&nbsp;
+          {reservation.city_name}
+        </h3>
+        <h3>
+          Date:&nbsp;
+          {reservation.reservation_date}
+        </h3>
+        <h3>
+          Package type:&nbsp;
+          {reservation.package_type}
+        </h3>
+        <h3>
+          Package name:&nbsp;
+          {reservationPackage.name}
+        </h3>
+        <h3>
+          Package details:&nbsp;
+          {reservationPackage.description}
+        </h3>
+        <h3>
+          Price:&nbsp;
+          {price}
+        </h3>
+      </div>
     </div>
   );
 }
