@@ -15,20 +15,15 @@
 /* Track on hover */
 ::-webkit-scrollbar-track {
   background: transparent;
-
-  /* Make the scrollbar track transparent on hover */
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: transparent;
-
-  /* Make it transparent on hover as well */
 }
 
 .packages {
-  flex: 0.9;
   width: 80%;
-  padding: 10% 0;
+  max-height: 100vh;
 }
 
 .packages-heading {
@@ -37,6 +32,7 @@
   letter-spacing: 2px;
   color: black;
   margin: 0;
+  text-align: center;
 }
 
 .packages-sub-heading {
@@ -44,18 +40,21 @@
   font-weight: 500;
   color: lightgray;
   margin: 0;
+  text-align: center;
 }
 
 .packages-search {
   margin-top: 10px;
-  font-weight: 500;  
+  font-weight: 500;
 }
 
 .packages-line {
-  margin-top: 30px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .packages-list {
+  width: 100%;
   display: flex;
   align-items: center;
   overflow: scroll;
@@ -107,8 +106,17 @@
 
 /* Mobile */
 @media screen and (width < 768px) {
-.swiper-slide {
+  .packages {
+    flex: 1;
+    width: 100%;
+  }
+
+  .swiper-slide {
     width: 100% !important;
+  }
+
+  .packages-line {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -126,10 +134,11 @@
     font-size: 1rem;
   }
 
-            .packages-line {
-              font-size: 1.2rem;
-              font-weight: 500;
-            }
+  .packages-line {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
   .swipe-btn-1,
   .swipe-btn-2 {
     height: 60px;
@@ -139,25 +148,23 @@
     width: 20px;
     height: 20px;
   }
-
 }
 
 @media screen and (width > 1400px) {
   .packages-heading {
-      font-size: 2.5rem;
-    }
-  
-    .packages-sub-heading {
-      font-size: 1.5rem;
+    font-size: 2.5rem;
+  }
 
-    }
+  .packages-sub-heading {
+    font-size: 1.5rem;
+  }
 
-    .packages-line {
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
+  .packages-line {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 
-        .packages-search {
-          font-size: 1.6rem;
-        }
- }
+  .packages-search {
+    font-size: 1.6rem;
+  }
+}
