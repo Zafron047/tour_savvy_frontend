@@ -34,7 +34,7 @@ const SideNav = () => {
   return (
     <div className="nav-container d-flex flex-column align-items-center">
       <nav className="burger">
-        <button type="button" className="toggle-button" onClick={toggleSidebar}>
+        <button type="button" aria-label="Navigation" className="toggle-button" onClick={toggleSidebar}>
           <GiHamburgerMenu />
         </button>
       </nav>
