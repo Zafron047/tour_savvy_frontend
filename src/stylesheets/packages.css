@@ -106,11 +106,6 @@
 
 /* Mobile */
 @media screen and (width < 768px) {
-  .packages {
-    flex: 1;
-    width: 100%;
-  }
-
   .swiper-slide {
     width: 100% !important;
   }

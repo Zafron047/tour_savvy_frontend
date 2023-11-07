@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import "../stylesheets/nav.css"
+import '../stylesheets/nav.css';
 
 const SideNav = () => {
   const user = JSON.parse(localStorage.getItem('user')) || {};
   return (
-    <div className='nav'>
+    <div className="nav">
       <ul>
         <li>
           <NavLink to="/packages">Packages</NavLink>
@@ -38,5 +38,5 @@ const SideNav = () => {
       </ul>
     </div>
   );
-}
+};
 export default SideNav;

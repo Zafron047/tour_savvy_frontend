@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../stylesheets/package.css';
 
 const Package = ({ p }) => {
-  const { name, description } = p;
+  const { name } = p;
   const line = Array(name.length + 5).join('-');
   return (
     <Link to={`/details/${p.id}`} className="package-link d-flex flex-column justify-content-center align-items-center">
@@ -15,9 +15,6 @@ const Package = ({ p }) => {
         />
         <h5 className="package-name">{name}</h5>
         <p className="package-line">{line}</p>
-        <p className="package-details">
-          {description}
-        </p>
         <p className="package-socials">
           <span><i className="bx bxl-facebook-circle text-secondary socials-icons" /></span>
           <span><i className="bx bxl-twitter text-secondary socials-icons" /></span>

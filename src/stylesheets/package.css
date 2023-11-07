@@ -95,10 +95,14 @@
 /* 2k screen  */
 
 @media screen and (width > 1400px) {
+  .package {
+    height: 600px;
+  }
+
   .package-img {
-    width: 250px;
-    height: 250px;
-    border-radius: 250px;
+    width: 280px;
+    height: 280px;
+    border-radius: 280px;
   }
 
   .package-name {

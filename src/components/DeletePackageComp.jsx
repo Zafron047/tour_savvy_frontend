@@ -1,23 +1,18 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import '../stylesheets/delete_package.css';
 
 const DeletePackageComp = ({ p }) => {
-  const { name, description } = p;
-
+  const { name, image } = p;
   return (
-    <Link to={`/details/${p.id}`}>
-      <div>
-        <img
-          src={p.image}
-          alt="avatar"
-        />
-        <h5>{name}</h5>
-        <p>------------------------</p>
-        <p>
-          {description}
-        </p>
-      </div>
-    </Link>
+    <div className="card-header">
+      <img
+        src={image}
+        alt="avatar"
+        className="img"
+      />
+      <h5>{name}</h5>
+    </div>
   );
 };
 
