@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render PackageForm component correctly 1`] = `
+<div>
+  <div>
+    Please log in to add a package.
+  </div>
+</div>
+`;
