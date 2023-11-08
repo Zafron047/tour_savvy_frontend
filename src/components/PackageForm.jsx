@@ -86,10 +86,10 @@ const PackageForm = () => {
           </div>
         ))}
         <div className="pkg-btn-wrap">
-          <button type="button" className="btn btn-secondary" onClick={addPackageType}>
-            Add Package
+          <button type="button" className="btn btn-secondary create" onClick={addPackageType}>
+            Add New Type
           </button>
-          <button type="submit" className="btn btn-primary create">Create Package</button>
+          <button type="submit" className="btn btn-primary submit">Submit</button>
         </div>
       </form>
     </div>
