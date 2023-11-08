@@ -20,6 +20,10 @@
   object-fit: cover;
 }
 
+.pack-name {
+  font-weight: bold;
+}
+
 .container {
   margin: 0;
 }

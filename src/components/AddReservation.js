@@ -103,6 +103,7 @@ function AddReservation() {
               <div key={type.name} className="package-types">
                 <input
                   type="radio"
+                  className="form-fields"
                   name="packageType"
                   value={type.name}
                   checked={packageType === type.name}
