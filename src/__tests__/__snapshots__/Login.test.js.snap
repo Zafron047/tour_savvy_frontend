@@ -2,37 +2,62 @@
 
 exports[`Should render Login component correctly 1`] = `
 <div>
-  <div>
-    <h2>
-      Login
-    </h2>
-    <form>
-      <div>
-        <input
-          id="username"
-          name="username"
-          placeholder="username"
-          type="text"
-          value=""
-        />
-      </div>
-      <div>
-        <input
-          id="password"
-          name="password"
-          placeholder="Password"
-          type="text"
-          value=""
-        />
-      </div>
-      <div>
-        <button
-          type="submit"
+  <div
+    class="auth-body"
+  >
+    <div
+      class="login-container"
+    >
+      <h2
+        class="login-title"
+      >
+        Login
+      </h2>
+      <form>
+        <div
+          class="form-group"
         >
-          Log In
-        </button>
+          <input
+            class="input-field"
+            id="username"
+            name="username"
+            placeholder="Username"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="form-group"
+        >
+          <input
+            class="input-field"
+            id="password"
+            name="password"
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          class="form-group"
+        >
+          <button
+            class="submit-button"
+            type="submit"
+          >
+            Log In
+          </button>
+        </div>
+      </form>
+      <div>
+        <a
+          class="registration"
+          href="/registration"
+        >
+          Register
+        </a>
       </div>
-    </form>
+    </div>
   </div>
 </div>
 `;
