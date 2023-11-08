@@ -32,7 +32,6 @@ function RemoveReservation() {
     <div className="delReservation">
       <div className="background" />
       <div className="main-delReservation">
-        <h2 className="cancel-heading">Cancel a reservation</h2>
         <div className="cancel-card-container">
           {reservations.map((reservation) => (
             <div className="cancel-card" key={reservation.id}>
@@ -50,13 +49,15 @@ function RemoveReservation() {
                   {reservation.package_type}
                 </h3>
               </div>
-              <button
-                type="button"
-                className="form-btns cancel-btn"
-                onClick={(e) => handleRemove(e, reservation.id)}
-              >
-                Cancel
-              </button>
+              <div className="button-wrap">
+                <button
+                  type="button"
+                  className="form-btns cancel-btn"
+                  onClick={(e) => handleRemove(e, reservation.id)}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           ))}
         </div>

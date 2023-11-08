@@ -12,6 +12,7 @@
   overflow-y: scroll;
   width: 100%;
   align-items: center;
+  margin-top: 10%;
 }
 
 .main-delReservation {
@@ -25,23 +26,34 @@
   font-weight: 500;
 }
 
-.cancel-heading {
-  font-size: 1.5rem;
-}
-
 .cancel-card {
   width: 80%;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
-  background-color: #80cd32aa;
   padding: 15px;
+  background-color: rgba(211, 211, 211, 0.264);
   justify-content: space-between;
 }
 
 .cancel-btn {
   height: 40px;
   width: 100px;
+}
+
+.cancel-details h2,
+h3 {
+  font-size: 1.4rem;
+}
+
+.button-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.cancel-btn:hover {
+  background-color: red;
+  color: white;
 }
 
 /* Mobile */

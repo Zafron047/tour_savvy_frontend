@@ -35,7 +35,6 @@ const Login = () => {
     try {
       if (res) {
         await dispatch(getReservations());
-        alert('You are logged in');
         navigate('/packages');
         window.location.reload();
       } else {
