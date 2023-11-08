@@ -13,6 +13,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
+- [🔭 Kanban](#kanban)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -92,7 +93,7 @@ To run the project, execute the following command:
 ```
 You also need to set up the api backend using
 
-<a href="https://github.com/zuhebahmed88091/tour_savvy_backend">This repository</a>
+<a href="https://github.com/zuhebahmed88091/tour_savvy_backend">Backend repository</a>
 
 ### Run tests
 
@@ -106,6 +107,12 @@ Example command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Kanban:
+## _[URL to the Kanban](http://localhost:3000/api-docs/index.html)_
+<br>
+<br>
+<img src="src/components/Assets/kanban.png" alt="Image Alt Text">
+
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -117,21 +124,21 @@ Example command:
 - [Twitter](https://twitter.com/NyalikMarvin)
 
 👤 **MD. Nohain Islam**
-- GitHub: [&nbsp; &nbsp; @githubhandle](https://github.com/Zafron047)
-- Twitter: [&nbsp; &nbsp; @twitterhandle](https://twitter.com/NohainZ)
-- LinkedIn: [&nbsp; LinkedIn](https://www.linkedin.com/in/nohain-islam/)
+- [GitHub](https://github.com/Zafron047)
+- [Twitter](https://twitter.com/NohainZ)
+- [LinkedIn](https://www.linkedin.com/in/nohain-islam/)
 
 👤 **MesakDuduCoder**
 
-- GitHub: [@githubhandle](https://github.com/MesakDuduCoder)
-- Twitter: [@twitterhandle](https://twitter.com/mesak_10)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mesak-lalrindika/)
+- [GitHub](https://github.com/MesakDuduCoder)
+- [Twitter](https://twitter.com/mesak_10)
+- [LinkedIn](https://www.linkedin.com/in/mesak-lalrindika/)
 
 👤 **Zuheb Ahmed**
 
-- GitHub: [&nbsp; &nbsp; @githubhandle](https://github.com/zuhebahmed88091)
-- Twitter: [&nbsp; &nbsp; @twitterhandle](https://twitter.com/ZuhebAhmed88091)
-- LinkedIn: [&nbsp; LinkedIn](https://www.linkedin.com/in/zuheb-ahmed/)
+- [GitHub](https://github.com/zuhebahmed88091)
+- [Twitter](https://twitter.com/ZuhebAhmed88091)
+- [LinkedIn](https://www.linkedin.com/in/zuheb-ahmed/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -139,8 +146,9 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Animations**
--[ ] **More locations**
+- **Animations**
+<br>
+- **More locations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
