@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../stylesheets/reservations.css';
 import '../stylesheets/common.css';
 
-function Reservations() {
+const Reservations = () => {
   const { reservations, isLoading } = useSelector(
     (store) => store.reservations,
   );

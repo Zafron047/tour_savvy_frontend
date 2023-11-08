@@ -4,7 +4,7 @@ import { removeReservation } from '../redux/reservations/reservationSlice';
 import '../stylesheets/delReservation.css';
 import '../stylesheets/common.css';
 
-function RemoveReservation() {
+const RemoveReservation = () => {
   const dispatch = useDispatch();
   const { reservations, isLoading } = useSelector(
     (store) => store.reservations,

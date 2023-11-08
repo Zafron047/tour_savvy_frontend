@@ -4,7 +4,7 @@ import { addReservation } from '../redux/reservations/reservationSlice';
 import '../stylesheets/addReservation.css';
 import '../stylesheets/common.css';
 
-function AddReservation() {
+const AddReservation = () => {
   const dispatch = useDispatch();
   const packages = useSelector((state) => state.packages.allPackages);
 
