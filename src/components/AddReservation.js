@@ -121,5 +121,5 @@ const AddReservation = () => {
       </div>
     </div>
   );
-}
+};
 export default AddReservation;

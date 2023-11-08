@@ -52,6 +52,6 @@ const Reservation = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Reservation;

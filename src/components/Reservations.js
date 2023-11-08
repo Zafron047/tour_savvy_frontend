@@ -70,5 +70,5 @@ const Reservations = () => {
       </div>
     </div>
   );
-}
+};
 export default Reservations;

@@ -63,6 +63,6 @@ const RemoveReservation = () => {
       </div>
     </div>
   );
-}
+};
 
 export default RemoveReservation;
