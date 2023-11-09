@@ -22,8 +22,8 @@ export const getReservations = createAsyncThunk(
 
     try {
       const res = await axios(
-        "https://tour-savvy.onrender.com/reservations",
-        config
+        'https://tour-savvy.onrender.com/reservations',
+        config,
       );
       return res.data;
     } catch (error) {
@@ -42,7 +42,7 @@ export const getReservation = createAsyncThunk(
           params: {
             type: idAndType.type,
           },
-        }
+        },
       );
       return res.data;
     } catch (error) {
@@ -71,9 +71,9 @@ export const addReservation = createAsyncThunk(
 
     try {
       const res = await axios.post(
-        "https://tour-savvy.onrender.com/reservations/",
+        'https://tour-savvy.onrender.com/reservations/',
         newReservation,
-        config
+        config,
       );
       return res.data;
     } catch (error) {
@@ -87,7 +87,7 @@ export const removeReservation = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const res = await axios.delete(
-        `https://tour-savvy.onrender.com/reservations/${id}`
+        `https://tour-savvy.onrender.com/reservations/${id}`,
       );
       return res.data;
     } catch (error) {

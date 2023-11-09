@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchPackages = createAsyncThunk('packages-fetcher', async () => {
-  const packages = await axios.get("https://tour-savvy.onrender.com/packages");
+  const packages = await axios.get('https://tour-savvy.onrender.com/packages');
   return packages.data;
 });
 
@@ -17,9 +17,9 @@ export const createPackage = createAsyncThunk(
       },
     };
     const response = await axios.post(
-      "https://tour-savvy.onrender.com/packages",
+      'https://tour-savvy.onrender.com/packages',
       newPackage,
-      config
+      config,
     );
     return response.data;
   },
@@ -37,7 +37,7 @@ export const deletePackage = createAsyncThunk(
     };
     await axios.delete(
       `https://tour-savvy.onrender.com/packages/${packageId}`,
-      config
+      config,
     );
     return packageId;
   },

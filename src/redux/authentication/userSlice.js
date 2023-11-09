@@ -3,8 +3,8 @@ import axios from 'axios';
 
 export const loginUser = createAsyncThunk('user-login', async (user) => {
   const response = await axios.post(
-    "https://tour-savvy.onrender.com/login",
-    user
+    'https://tour-savvy.onrender.com/login',
+    user,
   );
   return response.data;
 });
@@ -17,8 +17,8 @@ export const registrationUser = createAsyncThunk(
   'user-registration',
   async (user) => {
     const response = await axios.post(
-      "https://tour-savvy.onrender.com/signup",
-      user
+      'https://tour-savvy.onrender.com/signup',
+      user,
     );
     return response.data;
   },
