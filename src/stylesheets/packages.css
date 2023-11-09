@@ -1,0 +1,186 @@
+/* Track */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+
+  /* This makes the scrollbar handle transparent */
+}
+
+/* Handle on hover */
+
+/* Track on hover */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+.packages {
+  width: 80%;
+  max-height: 100vh;
+}
+
+.packages-heading {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: black;
+  margin: 0;
+  text-align: center;
+}
+
+.packages-sub-heading {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: gray;
+  margin: 0;
+  text-align: center;
+}
+
+.packages-search {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.packages-line {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.packages-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+.swipe-btn-1,
+.swipe-btn-2 {
+  height: 40px;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.swiper {
+  flex: 0.85;
+}
+
+.swipe-btn-1 {
+  flex: 0.075;
+  background-color: grey;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.swipe-btn-2 {
+  flex: 0.075;
+  background-color: #80cd32;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.slide-button {
+  width: 15px;
+  height: 15px;
+}
+
+.swiper-slide {
+  width: 33.3% !important;
+}
+
+/* Mobile */
+@media screen and (width < 768px) {
+  .packages {
+    width: 100% !important;
+  }
+
+  .swiper-slide {
+    width: 100% !important;
+  }
+
+  .packages-line {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Desktop */
+@media screen and (width > 1000px) {
+  .packages-heading {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  .packages-sub-heading {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .packages-search {
+    margin-top: 10px;
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    color: #333;
+  }
+
+  .packages-search::placeholder {
+    color: lightgray;
+  }
+
+  .packages-line {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .swipe-btn-1,
+  .swipe-btn-2 {
+    height: 60px;
+  }
+
+  .slide-button {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (width > 1400px) {
+  .packages-heading {
+    font-size: 2.5rem;
+  }
+
+  .packages-sub-heading {
+    font-size: 1.5rem;
+  }
+
+  .packages-line {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .packages-search {
+    font-size: 1.6rem;
+  }
+}
