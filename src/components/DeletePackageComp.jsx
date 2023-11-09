@@ -11,7 +11,7 @@ const DeletePackageComp = ({ p }) => {
         alt="avatar"
         className="img"
       />
-      <h5>{name}</h5>
+      <h5 className="pack-name">{name}</h5>
     </div>
   );
 };

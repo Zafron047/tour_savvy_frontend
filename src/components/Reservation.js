@@ -5,7 +5,7 @@ import { getReservation } from '../redux/reservations/reservationSlice';
 import '../stylesheets/resDetails.css';
 import '../stylesheets/common.css';
 
-function Reservation() {
+const Reservation = () => {
   const location = useLocation();
   const { reservation, reservationPackage, price } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
@@ -52,6 +52,6 @@ function Reservation() {
       </div>
     </div>
   );
-}
+};
 
 export default Reservation;

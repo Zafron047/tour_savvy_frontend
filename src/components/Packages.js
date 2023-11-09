@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Package from './Package';
 import '../stylesheets/packages.css';
-import 'swiper/css';
+import 'swiper/swiper.min.css';
 import 'swiper/swiper-bundle.css';
 
 const Packages = () => {

@@ -49,7 +49,6 @@
   padding: 0.5rem;
   margin: 0.5rem 0;
   border: none;
-  margin-left: 2rem;
 }
 
 .PackageForm .form-control::placeholder {
@@ -61,4 +60,19 @@
   .PackageForm .form-control {
     width: 12rem;
   }
+}
+
+.pkg-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  align-items: center;
+}
+
+.create {
+  width: 100%;
+}
+
+.submit {
+  width: 65%;
 }

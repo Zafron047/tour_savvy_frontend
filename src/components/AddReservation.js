@@ -4,7 +4,7 @@ import { addReservation } from '../redux/reservations/reservationSlice';
 import '../stylesheets/addReservation.css';
 import '../stylesheets/common.css';
 
-function AddReservation() {
+const AddReservation = () => {
   const dispatch = useDispatch();
   const packages = useSelector((state) => state.packages.allPackages);
 
@@ -103,6 +103,7 @@ function AddReservation() {
               <div key={type.name} className="package-types">
                 <input
                   type="radio"
+                  className="form-fields"
                   name="packageType"
                   value={type.name}
                   checked={packageType === type.name}
@@ -120,5 +121,5 @@ function AddReservation() {
       </div>
     </div>
   );
-}
+};
 export default AddReservation;

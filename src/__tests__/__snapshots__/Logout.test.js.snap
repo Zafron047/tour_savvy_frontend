@@ -2,10 +2,15 @@
 
 exports[`Should render Logout component correctly 1`] = `
 <div>
-  <button
-    type="button"
+  <div
+    class="logout-bg"
   >
-    Logout
-  </button>
+    <button
+      class="logout"
+      type="button"
+    >
+      Press again to Logout
+    </button>
+  </div>
 </div>
 `;

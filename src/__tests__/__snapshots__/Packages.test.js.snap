@@ -3,23 +3,69 @@
 exports[`Should render Packages component correctly 1`] = `
 <div>
   <div
-    class="container"
+    class="packages d-flex flex-column justify-content-center align-items-center"
   >
-    <h1
-      class="headline"
+    <div
+      class="flex-column justify-content-center align-items-center"
     >
-      TOUR PACKAGES
-    </h1>
-    <p
-      class="desc"
+      <h1
+        class="packages-heading"
+      >
+        TOUR PACKAGES
+      </h1>
+      <p
+        class="packages-sub-heading"
+      >
+        Please select a tour package
+      </p>
+      <p
+        class="packages-line"
+      >
+        ------------------------
+      </p>
+      <div
+        class="input-container"
+      >
+        <input
+          class="packages-search"
+          placeholder="Search by package name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="packages-list"
     >
-      please select a tour package
-    </p>
-    <input
-      placeholder="Search by package name"
-      type="text"
-      value=""
-    />
+      <button
+        class="swipe-btn-1"
+        type="button"
+      >
+        <img
+          alt="slide"
+          class="slide-button"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP5JREFUSEu1lt0RgkAMhHc7sRSpRK1ErEQ7kVLsJM4yd048TwZyBy+8MPk2mz+InR/uHB/NADM7ALhLKMmhFNwEMLMrgDEHJfkTLwRwqo9ecRdAofoF4ALgmSyKZ1BR/SCp4DAzawKYmayYVQKYVZOcsj1hQFKtQp5TsKnWKSFAoVrxR5K32txsBlQKOZCUNdVnE8DM5HVuv7+qPSkKkGJ1StWWFoBG/+QmVKB+FrnWE0h26b2YzSaLitTLbNT7moGvgocBLhvNgeahmk0zIK2DMptPh3UBuGz8iu637Cq10ZHpv66LLvPtrIsWX9cLa2K/k7nmhyF0MtcEzt+8AYK6lxmyTtQQAAAAAElFTkSuQmCC"
+        />
+      </button>
+      <div
+        class="swiper swiper-initialized swiper-horizontal"
+      >
+        <div
+          class="swiper-wrapper"
+          style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+        />
+      </div>
+      <button
+        class="swipe-btn-2"
+        type="button"
+      >
+        <img
+          alt="slide"
+          class="slide-button"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO9JREFUSEu1ltENwjAQQ+1NYBOYBDoJZRLYhI7STYwsJShSmyZNyX2icu9sX08lOhc798cqQNILwAXAleR8ZIgcQKGpm79JPlshJUDsa1CTmhLgDOAD4ASgSc0mgCQlufkNwBjkTACG2myKgOiRpDuAx1411QCDVtSMpQXYBUjUWEm0zNnYMlu3qCZAoia+L/5pVU0zIGPZTNKb96tDgABJ7ZpIXv8CCIH3sUhSn5BXpvadGrbuVHUGknxdfTZcm6u5K4MwtS3xm+xaBNmswBc0mTq760cA3c9109Q1GcT9zt6YLVuKgNo/1zzX/aviCyWOnxkFdwrCAAAAAElFTkSuQmCC"
+        />
+      </button>
+    </div>
   </div>
 </div>
 `;
