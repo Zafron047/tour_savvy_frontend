@@ -2,7 +2,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const loginUser = createAsyncThunk('user-login', async (user) => {
-  const response = await axios.post('http://127.0.0.1:3000/login', user);
+  const response = await axios.post(
+    "https://tour-savvy.onrender.com/login",
+    user
+  );
   return response.data;
 });
 
@@ -13,7 +16,10 @@ export const logoutUser = createAsyncThunk('user-logout', async () => {
 export const registrationUser = createAsyncThunk(
   'user-registration',
   async (user) => {
-    const response = await axios.post('http://127.0.0.1:3000/signup', user);
+    const response = await axios.post(
+      "https://tour-savvy.onrender.com/signup",
+      user
+    );
     return response.data;
   },
 );

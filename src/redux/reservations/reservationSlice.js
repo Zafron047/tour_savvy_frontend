@@ -21,7 +21,10 @@ export const getReservations = createAsyncThunk(
     };
 
     try {
-      const res = await axios('http://127.0.0.1:3000/reservations', config);
+      const res = await axios(
+        "https://tour-savvy.onrender.com/reservations",
+        config
+      );
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('something went wrong');
@@ -34,12 +37,12 @@ export const getReservation = createAsyncThunk(
   async (idAndType, thunkAPI) => {
     try {
       const res = await axios(
-        `http://127.0.0.1:3000/reservations/${idAndType.id}`,
+        `https://tour-savvy.onrender.com/reservations/${idAndType.id}`,
         {
           params: {
             type: idAndType.type,
           },
-        },
+        }
       );
       return res.data;
     } catch (error) {
@@ -68,9 +71,9 @@ export const addReservation = createAsyncThunk(
 
     try {
       const res = await axios.post(
-        'http://127.0.0.1:3000/reservations/',
+        "https://tour-savvy.onrender.com/reservations/",
         newReservation,
-        config,
+        config
       );
       return res.data;
     } catch (error) {
@@ -84,7 +87,7 @@ export const removeReservation = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const res = await axios.delete(
-        `http://127.0.0.1:3000/reservations/${id}`,
+        `https://tour-savvy.onrender.com/reservations/${id}`
       );
       return res.data;
     } catch (error) {
