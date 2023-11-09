@@ -7,6 +7,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [🎥 Live Video](#live-video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -53,6 +54,17 @@ Tour_Savvy_frontend is a react application where you can signup/login to a tour 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- To Login as Admin use
+-Username : zuheb
+-Password : 123456
+
+- [Live Demo Link](https://tour-savvy-react.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- GETTING STARTED -->
 
